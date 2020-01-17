@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+/*
+ * @Author: amujoe
+ * @Date: 1985-10-26 16:15:00
+ * @Description: file content
+ */
+import React, { Component } from 'react';
+import { Button } from 'antd';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  showLogin = ()  => {
+    console.log('showlogin')
+    import('./pages/login/login')
+      .then( msg => {
+        console.log('msg', msg.msg)
+      })
+      .catch(err => {
+        console.log('err', err)
+      })
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>
+            欢迎来到 React 世界
+          </p>
+          <button onClick={this.showLogin}>Load</button>
+          <Button type="default" click="showLogin">开启你的旅行</Button>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
