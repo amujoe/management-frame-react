@@ -42,7 +42,7 @@ class App extends Component {
       message.error("密码不能为空!")
       return false
     }
-    if (account == "13260269999" && psw == "123456") {
+    if (account === "13260269999" && psw === "123456") {
       // 登录完成, 跳转首页
       this.props.history.push('index')
     } else {
@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className="login">
         <div className="login-box">
-          <div className="title">BOSS 管理系统</div>
+          <div className="title f-w-400">左木子 管理系统</div>
           <p>
             <Input type="text" size="large" placeholder="请输入账号" onChange={this.accountChange}/>
           </p>

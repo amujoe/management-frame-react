@@ -5,6 +5,10 @@
   font-size: $size * 1px !important
   line-height: 1
 
+@mixin font-weight($size)
+  font-weight: $size !important
+
+
 // 写一些常用的
 .text-primary
   color: $text-primary !important
@@ -62,3 +66,26 @@
   @include font-size(38)
 .font-40
   @include font-size(40)
+
+.f-w-100
+  @include font-weight(100)
+.f-w-200
+  @include  font-weight(200)
+.f-w-300
+  @include  font-weight(300)
+.f-w-400
+  @include  font-weight(400)
+.f-w-500
+  @include  font-weight(500)
+.f-w-600
+  @include  font-weight(600)
+.f-w-700
+  @include  font-weight(700)
+.f-w-800
+  @include  font-weight(800)
+.f-w-900
+  @include  font-weight(900)
+.f-w-blod
+  @include  font-weight('bold')
+.f-w-lighter
+  @include  font-weight('lighter')
