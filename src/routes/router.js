@@ -8,7 +8,8 @@ import React, { Component} from 'react'
 import {HashRouter,Route,Switch} from 'react-router-dom';
 
 import Home from "../pages/home/home"
-import Login from "../pages/login/login"
+import Login from "../pages/login/Login"
+import Layout from "../pages/layout/Layout"
 
 
 class Router extends Component {
@@ -19,6 +20,7 @@ class Router extends Component {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
+            <Route path="/Layout" component={Layout} />
             <Route path="/index" component={Home} />
           </Switch>
         </HashRouter>

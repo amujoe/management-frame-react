@@ -4,13 +4,11 @@
  * @Description: file content
  */
 import { createStore } from 'redux'
-import todoApp from './reducers'
-
-// let store = createStore(todoApp)
+import app from './reducers'
 
 const store = createStore(
-  todoApp, /* preloadedState, */
+  app, /* preloadedState, */
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
- );
+);
 
 export { store }

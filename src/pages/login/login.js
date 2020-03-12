@@ -4,11 +4,15 @@
  * @Description: file content
  */
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Button, Input, message } from 'antd';
+import { setUserInfo, setMenuList } from "../../redux/actions";
 
-import './login.scss';
+import './Login.scss';
+// data
+import MenuList from "../../data/menu";
 
-class App extends Component {
+class Login extends Component {
   
   state = {
     account: "",
@@ -31,7 +35,8 @@ class App extends Component {
 
   // 登录
   saveInfo = () => {
-    console.log('aaa')
+    console.log('aaa', this.props)
+    
     let account = this.state.account
     let psw = this.state.passW
     if (!account) {
@@ -43,8 +48,19 @@ class App extends Component {
       return false
     }
     if (account === "13260269999" && psw === "123456") {
+      console.log('MenuList', MenuList)
+      let user = {
+        name: "左木子",
+        sex: "boy",
+        old: "30"
+      }
+      this.props.setUserInfo(user)
+      this.props.setMenuList(MenuList)
+      // store.dispatch({ type: 'INCREMENT', })
+      // this.props.setHeaderMenu()
+      // this.props.setSideMenu()
       // 登录完成, 跳转首页
-      this.props.history.push('index')
+      this.props.history.push('layout')
     } else {
       message.error('账号或密码不正确!')
     }
@@ -72,4 +88,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  null,
+  { setUserInfo, setMenuList }
+)(Login);
