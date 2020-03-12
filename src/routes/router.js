@@ -4,30 +4,31 @@
  * @Description: file content
  */
 import React, { Component} from 'react'
+// BrowserRouter or HashRouter
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
-import {HashRouter,Route,Switch} from 'react-router-dom';
-
-import Home from "../pages/home/home"
+import Index from "../pages/index/Index"
+// import NoPage from "../pages/base/NoPage"
 import Login from "../pages/login/Login"
 import Layout from "../pages/layout/Layout"
 
 
-class Router extends Component {
+class RouterClass extends Component {
   render () {
     return (
       <div>
-        <HashRouter>
+        <Router>
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/Layout" component={Layout} />
-            <Route path="/index" component={Home} />
+            <Route path="/index" component={Index} />
           </Switch>
-        </HashRouter>
+        </Router>
       </div>
     )
   }
 }
 
 
-export default Router
+export default RouterClass

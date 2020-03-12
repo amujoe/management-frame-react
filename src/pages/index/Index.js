@@ -7,39 +7,7 @@ import React, { Component } from 'react';
 import { Button } from 'antd';
 import { Link } from "react-router-dom";
 
-import { createStore } from 'redux'
 import { connect } from "react-redux";
-// import { store } from '../../redux/store';
-
-
-// // 停止监听 state 更新
-// unsubscribe()
-
-
-// const Counter = ({value, onIncrement, onDecrement}) => (
-//   <div>
-//     <h1>{value}</h1>
-//     <Button onClick={onIncrement}>点击加一</Button>
-//     <Button onClick={onDecrement}>点击减一</Button>
-//     <div><Link to="/login">跳转登录</Link></div>
-//   </div>
-// );
-
-// 状态
-const reducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT': return state + 1;
-    case 'DECREMENT': return state - 1;
-    default: return state;
-  }
-};
-
-const store = createStore(reducer);
-
-const init = store.getState();
-
-console.log('init', init)
-
 
 class Home extends Component {
 

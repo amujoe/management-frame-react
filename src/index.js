@@ -8,12 +8,17 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import Router from './routes/router';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { store, persistor } from './redux/store';
 import * as serviceWorker from './serviceWorker';
+
+import {PersistGate} from 'redux-persist/lib/integration/react';
+
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router />
+    <PersistGate loading={null} persistor={persistor}>
+      <Router />
+    </PersistGate>
   </Provider>
 ), document.getElementById('root'));
 

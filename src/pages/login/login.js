@@ -61,6 +61,7 @@ class Login extends Component {
       // this.props.setSideMenu()
       // 登录完成, 跳转首页
       this.props.history.push('layout')
+      // this.props.history.push('index')
     } else {
       message.error('账号或密码不正确!')
     }

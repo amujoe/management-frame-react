@@ -25,8 +25,8 @@ class HeaderMenu extends Component {
     let menu_list = store.getState().MENU
     let header_menu_list = []
     let current_header_menu = null
-    // let url = this.props
-    // console.log('url', url)
+    let url = this.props.menu.location.pathname
+    console.log('url', url)
 
     // 格式化 top menu
     menu_list.forEach(m => {

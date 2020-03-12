@@ -28,6 +28,7 @@ class Layouter extends Component {
 
     // 状态值
     this.state = {
+      props,
       menu_list: [],
       current_user: null
     }
@@ -81,7 +82,7 @@ class Layouter extends Component {
     return (
       <Layout>
         <Header className="header">
-          <HeaderMenu></HeaderMenu>
+          <HeaderMenu menu={this.props}></HeaderMenu>
         </Header>
         <Layout className="main">
           <Sider width={200} className="sider">
